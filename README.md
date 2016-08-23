@@ -1,5 +1,5 @@
-# house
-An A/B Testing Framework for Node - Remember, The House Always Wins
+# House, An A/B Testing Framework for Node
+## The House Always Wins
 
 ## Why?
 A/B Testing is great. It makes you lots of money. Everyone likes money.
