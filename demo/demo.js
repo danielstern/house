@@ -3,7 +3,7 @@ let house = require('./../house.js');
 
 let app = new express();
 let ab = new house.ab();
-let port = process.env.port || 7777;
+let port = process.env.PORT || 7777;
 
 ab.option()
 	.name(`Group A - elite controller offer page (multiple)`)
@@ -20,7 +20,7 @@ app.use('/elite-controller', ab.middleware());
 app.get('/',(req,res)=>{
 	res.send(
 		`
-			<a target=_blank href="elite-controller">Do the test</a>; 
+			<a target=_blank href="elite-controller">Do the test</a>;
 		`
 	)
 })
