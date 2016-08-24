@@ -3,6 +3,7 @@ let house = require('./../house.js');
 
 let app = new express();
 let ab = new house.ab();
+let port = process.env.port || 7777;
 
 ab.option()
 	.url(`/option1`);
@@ -26,4 +27,4 @@ app.get('/option1',(req,res)=>{
 .get('/option2',(req,res)=>{
 	res.send("You arrived at option 2");
 })
-app.listen(7777,()=>{console.log("App listening on port 7777")});
+app.listen(port,()=>{console.log(`App listening on port ${port}`)});
