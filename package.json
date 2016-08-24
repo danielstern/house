@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require assert --recursive -R spec",
-    "test:dev": "mocha --require assert --recursive -R spec -w"
+    "test:dev": "mocha --require assert --recursive -R spec -w",
+	"start": "node demo/demo.js"
   },
   "repository": {
     "type": "git",

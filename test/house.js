@@ -3,6 +3,7 @@ let assert = require('chai').assert;
 let should = require('should');
 let expect = require('chai').expect;
 let express = require('express');
+let supertest = require('supertest');
 
 describe("The House",()=>{
 	it("Always Wins",()=>{
@@ -87,8 +88,8 @@ describe("The AB Test",()=>{
 			let ab = new house.ab();
 
 			let option1 = ab.option(`that sounds really boring`,`what?`,0);
-			let option2 = ab.option(`who - who's that guy?`,`oh`,10);
-			let option3 = ab.option(`wow!`,`nice`,1000);
+			let option2 = ab.option(`who - who's that guy?`,`oh`,1);
+			let option3 = ab.option(`wow!`,`nice`,1);
 
 			let max_attempts = Math.pow(2,8);
 			let attempt = 0;
@@ -96,7 +97,10 @@ describe("The AB Test",()=>{
 
 			while (attempt++ < max_attempts) {
 				let res = ab.roll();
-				attemptResults.push(res);
+				if (!attemptResults.includes(res)) {
+					attemptResults.push(res);
+				}
+
 			}
 			expect(attemptResults).not.to.include(option1);
 			expect(attemptResults).to.include(option2);
@@ -104,9 +108,20 @@ describe("The AB Test",()=>{
 		});
 	});
 
-	it("should correctly route urls");
-	it("should always redirect the corresponding express route to at least one of the urls");
-	it("should, given enough requests, eventually route to all urls with non-zero probability");
+	it("should always redirect the corresponding express route to at least one of the urls",(done)=>{
+		let app = new express();
+		let ab = new house.ab();
+		let option = ab.option(`An option`,`/test`);
+		app.use('/',ab.middleware());
+
+		supertest(app)
+		.get('/')
+		.expect(302)
+		.expect('Location', '/test')
+		.end(done)
+
+	});
+	xit("should, given enough requests, eventually route to all urls with non-zero probability"); // not really necessary
 });
 
 describe("The Option",()=>{
@@ -125,7 +140,13 @@ describe("The Option",()=>{
 		expect(option.url()).to.equal("//jokes");
 	});
 	xit("should add another url to the ping property"); // this doesn't really need to be iplemented now
-	it("should change the odds");
+	it("should change the odds",()=>{
+		let ab = new house.ab();
+		let option = ab.option();
+		expect(option.probability()).to.equal(1);
+		option.probability(777);
+		expect(option.probability()).to.equal(777);
+	});
 	it("should have a constructor shortcut",()=>{
 		let ab = new house.ab();
 		let option = ab.option("my option","http://youtube.com",2);
