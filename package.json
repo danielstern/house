@@ -4,7 +4,8 @@
   "description": "an a/b testing framework for node",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require assert --recursive -R spec"
+    "test": "mocha --require assert --recursive -R spec",
+    "test:dev": "mocha --require assert --recursive -R spec -w"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,10 @@
   "homepage": "https://github.com/danielstern/house#readme",
   "dependencies": {
     "chai": "^3.5.0",
+    "chance": "^1.0.4",
+    "d3": "^4.2.2",
     "express": "^4.14.0",
+    "lodash": "^4.15.0",
     "mocha": "^3.0.2",
     "should": "^11.1.0",
     "supertest": "^2.0.0"
