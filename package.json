@@ -1,12 +1,15 @@
 {
   "name": "house",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "an a/b testing framework for node",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require assert --recursive -R spec",
     "test:dev": "mocha --require assert --recursive -R spec -w",
-	"start": "node demo/demo.js"
+	"start": "demo/demo.js"
+  },
+  "engines": {
+  	"node": "6.1.0"
   },
   "repository": {
     "type": "git",
