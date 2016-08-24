@@ -20,7 +20,7 @@ app.use('/elite-controller', ab.middleware());
 app.get('/',(req,res)=>{
 	res.send(
 		`
-			<a target=_blank href="elite-controller">Do the test</a>;
+			<a target=_blank href="elite-controller">Do the test</a>; 
 		`
 	)
 })
