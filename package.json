@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require assert --recursive -R spec",
     "test:dev": "mocha --require assert --recursive -R spec -w",
-	"start": "demo/demo.js"
+	"start": "node demo/demo.js"
   },
   "engines": {
   	"node": "6.1.0"
