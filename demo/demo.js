@@ -1,5 +1,5 @@
 let express = require('express');
-let house = require('./../house.js');
+let house = require('house-ab');
 
 let app = new express();
 let ab = new house.ab();
@@ -25,10 +25,4 @@ app.get('/',(req,res)=>{
 	)
 })
 
-app.get('/option1',(req,res)=>{
-	res.send("You arrived at option 1");
-})
-.get('/option2',(req,res)=>{
-	res.send("You arrived at option 2");
-})
 app.listen(port,()=>{console.log(`App listening on port ${port}`)});

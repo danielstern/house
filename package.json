@@ -1,8 +1,8 @@
 {
-  "name": "house",
-  "version": "1.0.1",
+  "name": "house-ab",
+  "version": "1.0.2",
   "description": "an a/b testing framework for node",
-  "main": "index.js",
+  "main": "house.js",
   "scripts": {
     "test": "mocha --require assert --recursive -R spec",
     "test:dev": "mocha --require assert --recursive -R spec -w",
