@@ -1,9 +1,12 @@
 # House, An A/B Testing Framework for Node
+
+![house-logo](https://cloud.githubusercontent.com/assets/4268152/17969629/01606d92-6aa1-11e6-9692-e2ce6e77b238.png)
+
 ## The House Always Wins
 
 ## Why?
 A/B Testing is great. It makes you lots of money. Everyone likes money.
-![house-logo](https://cloud.githubusercontent.com/assets/4268152/17969629/01606d92-6aa1-11e6-9692-e2ce6e77b238.png)
+
 
 The mega-geniuses out there make it seem complicated. It doesn't have to be.
 
