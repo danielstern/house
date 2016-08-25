@@ -31,7 +31,7 @@ In order to use this module, you have to import the `house` module and create a 
 
 ```javascript
 let express = require('express');
-let house = require('housejs');
+let house = require('house-ab');
 
 let app = new express();
 let ab = new house.ab();

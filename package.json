@@ -1,6 +1,6 @@
 {
   "name": "house-ab",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "an a/b testing framework for node",
   "main": "house.js",
   "scripts": {
