@@ -1,6 +1,6 @@
 # House, An A/B Testing Framework for Node
 
-![house-logo](https://cloud.githubusercontent.com/assets/4268152/17969629/01606d92-6aa1-11e6-9692-e2ce6e77b238.png)
+![logo-smaller](https://cloud.githubusercontent.com/assets/4268152/17970173/6e02d708-6aa3-11e6-89da-fe56c5dfe90a.png)
 
 ## The House Always Wins
 
@@ -39,12 +39,12 @@ let port = process.env.PORT || 7777;
 
 ab.option()
 	.name(`Group A - elite controller offer page (multiple)`)
-	.url(`https://www.amazon.com/gp/offer-listing/B00ZDNNRB8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00ZDNNRB8&linkCode=am2&tag=the-tech-reviewer-a-20&linkId=d3c4159691eac2c771d964aa7f295a29`)
+	.url(`https://www.amazon.com/gp/offer-listing/B00ZDNNRB8`)
 	.probability(1);
 
 ab.option()
 	.name(`Group B - elite controller main page`)
-	.url(`https://www.amazon.com/dp/B00ZDNNRB8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00ZDNNRB8&linkCode=am2&tag=the-tech-reviewer-b-20&linkId=e57472e5aec289acc8bc472f9322e8eb`)
+	.url(`https://www.amazon.com/dp/B00ZDNNRB8`)
 	.probability(1);
 
 
@@ -59,3 +59,10 @@ app.get('/',(req,res)=>{
 
 app.listen(port,()=>{console.log(`App listening on port ${port}`)});
 ```
+
+## What is it?
+House.js is basically express Middleware that randomizes the outcome. It's perfect for A/B testing and easy to use. There is support (not yet implemented) for sending additional requests to analytics endpoints.
+
+
+## Running Tests
+`npm test`
